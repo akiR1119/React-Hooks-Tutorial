@@ -8,6 +8,7 @@ type BookSearchDialogProps = {
 };
 
 const BookSearchDialog = (props: BookSearchDialogProps) => {
+  // eslint-disable-next-line
   const [books, setBooks] = useState([] as BookDescription[]);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
