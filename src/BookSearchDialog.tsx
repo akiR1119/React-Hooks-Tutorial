@@ -91,7 +91,7 @@ const BookSearchDialog = (props: BookSearchDialogProps) => {
     return (
       <BookSearchItem
         description={b}
-        onBookAdd={(b) => handleBookAdd}
+        onBookAdd={(b) => handleBookAdd(b)}
         key={idx}
       />
     );
