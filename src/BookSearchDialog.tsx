@@ -7,7 +7,7 @@ type BookSearchDialogProps = {
   onBookAdd: (book: BookDescription) => void;
 };
 
-//注：後に別ファイルにリファクタリングする
+//注：API接続部　後に別ファイルにリファクタリングする
 function buildSearchUrl(
   title: string,
   author: string,
