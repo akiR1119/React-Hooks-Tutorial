@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 import Modal from "react-modal";
@@ -24,6 +24,8 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
   },
 };
+
+const APP_KEY = "react-hooks-tutrial";
 
 const App = () => {
   const [books, setBooks] = useState([] as BookToRead[]);
@@ -66,6 +68,17 @@ const App = () => {
   const handleModalClose = () => {
     setModalIsOpen(false);
   };
+
+  useEffect(() => {
+    const storedBooks = localStorage.getItem(APP_KEY);
+    if (storedBooks) {
+      setBooks(JSON.parse(storedBooks));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(APP_KEY, JSON.stringify(books));
+  }, [books]);
 
   return (
     <div className="App">
